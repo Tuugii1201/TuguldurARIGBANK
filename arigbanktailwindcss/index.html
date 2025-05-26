@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <title>Arig Bank</title>
+
+
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/87d83f90d2.js" crossorigin="anonymous"></script>
+
+</head>
+<body class="bg-gray-100 overflow-x-hidden">
+    <main>
+        <header class="p-4 mx-2 md:mx-20 mt-2 bg-gray-100 flex justify-between items-center">
+  <div class="hidden lg:flex justify-between w-full">
+    <!-- Left group: User / Company buttons + logo -->
+    <div class="flex">
+      <!-- User button -->
+      <div
+        class="flex items-center pl-2 border border-r-0 border-gray-300 bg-white rounded-l-xl h-[50px] z-20 lg:-mr-[17px]"
+      >
+        <a href="/mn">
+          <button
+            class="flex items-center justify-center gap-2 rounded-lg w-[50px] lg:w-[140px] h-[38px] font-semibold text-white bg-gradient-to-r from-purple-600 to-purple-400"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-[18px]"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              viewBox="0 0 24 24"
+            >
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span class="hidden md:block">Иргэн</span>
+          </button>
+        </a>
+      </div>
+
+      <!-- Logo SVG -->
+      <div class="hidden md:block aspect-[106/77] h-[50px] z-10">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-full"
+          viewBox="0 0 106 77"
+          fill="none"
+        >
+          <path
+            d="M23.5003 76.5C-5.85925 76.5 -5.85968 0.5 23.5002 0.5C38.2681 0.5 38.5001 7.04902 55.5001 7.04902C72.5001 7.04902 74.007 0.5 89.5008 0.5C110.928 0.5 110.531 76.5 89.5008 76.5C72.1302 76.5 72.7416 69.5735 55.5001 69.5735C38.2585 69.5735 40.2259 76.5 23.5003 76.5Z"
+            fill="white"
+            stroke="#EAECF0"
+          ></path>
+        </svg>
+      </div>
+
+      <!-- Company button -->
+      <div
+        class="flex items-center justify-center bg-white rounded-r-xl border border-l-0 border-gray-300 h-[50px] z-20 lg:-ml-4 px-4"
+      >
+        <a href="/mn/company">
+          <button
+            class="flex items-center gap-2 justify-center w-[50px] lg:w-[150px] font-semibold text-black leading-normal"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-[18px]"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              viewBox="0 0 24 24"
+            >
+              <line x1="3" y1="22" x2="21" y2="22"></line>
+              <line x1="6" y1="18" x2="6" y2="11"></line>
+              <line x1="10" y1="18" x2="10" y2="11"></line>
+              <line x1="14" y1="18" x2="14" y2="11"></line>
+              <line x1="18" y1="18" x2="18" y2="11"></line>
+              <polygon points="12 2 20 7 4 7"></polygon>
+            </svg>
+            <span class="hidden md:block">Байгууллага</span>
+          </button>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right group: Search, location, currency, language -->
+    <div class="flex items-center gap-4">
+      <!-- Search -->
+      <div
+        class="flex items-center border border-r-0 border-gray-300 bg-white rounded-l-xl h-[50px] z-20 -mr-[14px] pl-4 gap-1"
+      >
+        <div
+          class="flex items-center justify-center w-8 h-8 bg-gray-100 border border-gray-300 rounded-sm"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5 text-purple-600"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            viewBox="0 0 24 24"
+          >
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="M21 21l-4.3-4.3"></path>
+          </svg>
+        </div>
+        <input
+          type="text"
+          placeholder="Хайх"
+          class="w-[60px] hover:w-[200px] transition-all duration-300 ease-in-out border-none p-1 text-black font-semibold text-sm leading-normal"
+        />
+      </div>
+
+      <!-- Location -->
+      <div class="flex items-center w-[146px]">
+        <div
+          class="flex items-center justify-center w-8 h-8  border border-gray-300 rounded-lg"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5 text-purple-600"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 01-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0116 0z"
+            ></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+        </div>
+        <a
+          href="/mn/branches"
+          class="font-semibold text-black  text-sm"
+          >Хаяг байршил</a
+        >
+      </div>
+
+
+
+      <!-- Currency & Language -->
+      <div
+        class="flex items-center gap-2 cursor-pointer bg-white rounded-r-xl border border-l-0 border-gray-300 h-[50px] z-20 pr-4 relative w-full max-w-[300px]"
+      >
+        <div
+          class="flex items-center gap-2 border border-gray-300 bg-gray-100 rounded-sm py-1 px-1"
+        >
+          <img
+            alt="Currency image"
+            src="/download.png"
+            class="w-[18px] h-[18px] rounded-full border border-gray-200 object-cover"
+          />
+          <p class="font-semibold text-black leading-normal">Валютын ханш: 3565 ₮</p>
+        </div>
+
+        <div class="flex items-center gap-1 cursor-pointer">
+          <img
+            alt="English flag"
+            loading="lazy"
+            src="/en.webp"
+            class="w-6 h-6"
+          />
+          <span class="font-semibold text-black">EN</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+          <nav class="my-1 px-4 py-2 flex items-center justify-between">
+
+            <div class="flex items-center mx-20">
+              <img src="/logo_mn.svg" alt="Logo" class="h-12 w-auto mr-2" />
+            </div>
+        
+            <div class="relative flex items-center gap-4 mx-20 bg-white  border py-3 p-3 rounded-lg">
+
+              <button id="servicesToggle" type="button" class="text-gray-600 hover:text-black flex items-center gap-1 focus:outline-none border rounded-full px-4 py-2 bg-white shadow-md transition duration-300 ease-in-out">
+                <i class="fas fa-caret-left"></i> 
+              </button>
+              <div id="servicesMenu"
+               class="absolute top-1/2 right-full ml-2 flex flex-row bg-white border rounded-md shadow-lg
+                      transform -translate-x-4 -translate-y-1/2 opacity-0 invisible
+                      transition-all duration-300 z-50 py-3">
+                <a href="#" class="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 whitespace-nowrap border-r">Loan</a>
+                <a href="#" class="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 whitespace-nowrap border-r">Savings</a>
+                <a href="#" class="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 whitespace-nowrap">Insurance</a>
+              </div>
+        
+              <button class="bg-gradient-to-r from-black to-[#923CB5] text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out">
+                Internet Banking
+              </button>
+            </div>
+          </nav>
+          <!-- Popup Wrapper -->
+<div id="popup" class="fixed z-[99999] left-5 right-5 bottom-5">
+  <div class="bg-white sm:w-[500px] w-full h-[400px] relative overflow-hidden rounded-xl shadow-[0_10px_20px_rgba(0,0,0,0.25),_0_5px_10px_rgba(0,0,0,0.15)]">
+    
+    <!-- Close Button -->
+    <button
+      id="closeButton"
+      class="absolute top-3 right-1 text-gray-600 text-lg font-bold z-50 px-3 py-1 font-serif"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-x">
+        <path d="M18 6 6 18"></path>
+        <path d="m6 6 12 12"></path>
+      </svg>
+    </button>
+
+    <!-- Swiper Container -->
+    <div class="swiper swiper-initialized swiper-horizontal swiper-backface-hidden">
+      <div class="swiper-wrapper translate-x-0">
+        <div class="swiper-slide swiper-slide-active w-[500px] mr-[30px]">
+          <div class="relative">
+            <h3 class="text-[#7A3497] py-3 pb-1 px-4 text-base">Таны сонорт</h3>
+
+            <div class="overflow-auto mb-3 px-4 text-base font-semibold banner-detail">
+              <h1 class="lg:text-[50px] text-[34px] font-semibold text-[#1D2939] leading-[38px] lg:leading-[60px] fade-in-up">
+                Байгууллагад зориулсан УЯН хатан нөхцөлтэй, хугацаатай хадгаламжийн бүтээгдэхүүн
+              </h1>
+            </div>
+
+            <!-- Image -->
+            <div class="h-[325px] w-full sm:w-[500px] relative">
+              <img
+                alt="Таны сонорт"
+                loading="lazy"
+                decoding="async"
+                class="object-cover absolute inset-0 w-full h-full"
+                src="image%20(28)_1.png"
+              />
+            </div>
+
+            <!-- Button -->
+            <a
+              href="https://www.arigbank.mn/mn/news/164"
+              class="absolute bottom-[70px] left-1/2 z-[999991] bg-[#9242B7] text-white rounded-[8px] border border-[#9242B7] shadow-sm px-[35px] py-[12px] transform -translate-x-1/2"
+            >
+              Сонирхох
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Swiper Pagination -->
+      <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal swiper-pagination-lock">
+        <span class="custom-bullet custom-bullet-active"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById("closeButton").addEventListener("click", function () {
+    document.getElementById("popup").classList.add("hidden");
+  });
+</script>
+
+          
+
+          <script>
+            const toggleBtn = document.getElementById('servicesToggle');
+            const dropdown = document.getElementById('servicesMenu');
+            let timeoutId = null;
+        
+            toggleBtn.addEventListener('click', () => {
+              const isVisible = dropdown.classList.contains('opacity-100');
+        
+              if (isVisible) {
+                hideDropdown();
+              } else {
+                showDropdown();
+                // Auto-hide after 10 seconds
+                timeoutId = setTimeout(() => {
+                  hideDropdown();
+                }, 10000);
+              }
+            });
+        
+            function showDropdown() {
+              dropdown.classList.remove('opacity-0', 'invisible', 'translate-x-4');
+              dropdown.classList.add('opacity-100', 'visible', 'translate-x-0');
+            }
+        
+            function hideDropdown() {
+              dropdown.classList.remove('opacity-100', 'visible', 'translate-x-0');
+              dropdown.classList.add('opacity-0', 'invisible', 'translate-x-4');
+              clearTimeout(timeoutId);
+            }
+
+            AOS.init({
+    once: true,         // зөвхөн 1 удаа анимэйшн хийх
+    duration: 800,      // үргэлжлэх хугацаа (мс)
+    offset: 100         // хэдий өндөр дээр байхад trigger хийх вэ
+  });
+
+  
+
+  const toggleButton = document.getElementById("toggleFAB");
+  const fabMenu = document.getElementById("fabMenu");
+
+  let isOpen = true;
+
+  toggleButton.addEventListener("click", () => {
+    isOpen = !isOpen;
+
+    if (isOpen) {
+      fabMenu.classList.remove("opacity-0", "translate-y-4", "pointer-events-none");
+      fabMenu.classList.add("opacity-100", "translate-y-0");
+    } else {
+      fabMenu.classList.remove("opacity-100", "translate-y-0");
+      fabMenu.classList.add("opacity-0", "translate-y-4", "pointer-events-none");
+    }
+  });
+          </script>
+
+
+
+
+
+    </main>
+    <div class="md:flex hidden overflow-hidden w-full">
+        <div class="relative w-full">
+          <div class="relative mx-auto buildings">
+            <img src="image/building_bg.png" alt="ARIG Bank" />
+            <div class="absolute inset-0">
+              <div class="w-[30%] absolute z-[160] bottom-0 left-1/2 -translate-x-1/2 pointer-events-none">
+                <img src="/image/HG2.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="bg-[#f6f6f6] pt-0 sm:pt-10">
+        <div class="container mx-auto px-8 sm:px-0">
+          <div class="bg-white rounded-2xl border border-[#eee] p-6 lg:p-10">
+            <h4 class="text-xl md:text-2xl text-[#1D2939] font-semibold leading-6 pb-6">
+              Онцлох бүтээгдэхүүн
+            </h4>
+      
+            <div class="grid md:grid-cols-3 gap-6">
+              <!-- Card 1 -->
+              <div class="flex flex-col items-center" data-aos="fade-up">
+                <img src="/image/Bichil.webp" alt="Бизнесийн бичил зээл" class="h-[300px] object-contain rounded-lg" />
+                <div class="flex flex-col items-center mt-2.5 text-center">
+                  <a href="#">
+                    <p class="text-[#3E235A] text-lg font-bold mb-1.5">
+                      Бизнесийн бичил зээл /Орлого барьцаалсан/
+                    </p>
+                  </a>
+                  <p class="text-[#626262] px-5 line-clamp-5">
+                    Бизнес эрхлэгч ТАНЫ Бизнесийн ашиг, орлогоо нэмэгдүүлэх, бүтээгдэхүүн,
+                    үйлчилгээний чанараа сайжруулахад тань бид тусална...
+                  </p>
+                  <a href="#" class="text-[#3E235A] hover:text-white hover:bg-[#3E235A] transition-colors mt-2.5 mb-5 py-1.5 px-4 rounded w-40 text-center">
+                    Дэлгэрэнгүй
+                  </a>
+                </div>
+              </div>
+      
+              <!-- Card 2 -->
+              <div class="flex flex-col items-center" data-aos="fade-up">
+                
+                <div class="flex flex-col items-center mt-2.5 text-center">
+                  <a href="#">
+                    <p class="text-[#3E235A] text-lg font-bold mb-1.5">
+                        Бараа татан авах барьцаагүй зээл
+                    </p>
+                  </a>
+                  <p class="text-[#626262] px-5 line-clamp-5">
+                    Бизнес эрхлэгч ТАНЫ Бизнесийн ашиг, орлогоо нэмэгдүүлэх, бизнесийн үйл ажиллагаагаа тасалдалгүй явуулах, гэрээний дагуу хүлээсэн үүргээ цаг хугацаандаа гүйцэтгэж бизнесийн итгэлт хамтрагч байхад тань “Бараа татан авах барьцаагүй зээл” бүтээгдэхүүнийг санал болгож байна...
+                  </p>
+                  <a href="#" class="text-[#3E235A] hover:text-white hover:bg-[#3E235A] transition-colors mt-2.5 mb-5 py-1.5 px-4 rounded w-40 text-center">
+                    Дэлгэрэнгүй
+                  </a>
+                </div>
+                <img src="/image/DBR55529-Edit.webp" alt="Зээл" class="h-[300px] object-contain rounded-lg" />
+              </div>
+      
+              <!-- Card 3 -->
+              <div class="flex flex-col items-center" data-aos="fade-up">
+                <img src="/image//SHatalsan.webp" alt="Зээл" class="h-[300px] object-contain rounded-lg" />
+                <div class="flex flex-col items-center mt-2.5 text-center">
+                  <a href="#">
+                    <p class="text-[#3E235A] text-lg font-bold mb-1.5">
+                        Шаталсан хүүт хадгаламж
+                    </p>
+                  </a>
+                  <p class="text-[#626262] px-5 line-clamp-5">
+                    Хадгаламждаа орлого нэмэх тусам дансны үлдэгдлээс хамаарч хүү нь шатлалтайгаар өсөн нэмэгдэх, хүүгийн өндөр өгөөжийг өгөх зорилго бүхий хадгаламж.
+                  </p>
+                  <a href="#" class="text-[#3E235A] hover:text-white hover:bg-[#3E235A] transition-colors mt-2.5 mb-5 py-1.5 px-4 rounded w-40 text-center">
+                    Дэлгэрэнгүй
+                  </a>
+                </div>
+              </div>
+            </div>
+      
+          </div>
+        </div>
+      </section>
+
+      <section class="" data-aos="fade-up">
+        <div class="my-12 hidden md:block px-0 mx-20">
+          <div class="mx-auto">
+            <div class="relative bg-gradient-to-r from-[#6C47FF] to-[#B264FF] rounded-tr-3xl rounded-bl-3xl overflow-hidden w-full h-[465px] text-white">
+              <div class="absolute inset-0 flex justify-center items-center">
+                <img src="/bnnr.webp" alt="Banner" class="object-cover w-full h-full" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section data-aos="fade-up">
+        <div class="w-full h-auto md:min-h-[750px] bg-[#6D45AA] flex flex-col justify-center items-center rounded-tl-[9px] rounded-tr-[9px] sm:rounded-tl-[120px] sm:rounded-tr-[120px] overflow-x-hidden" data-aos="fade-up">
+            <div class="container mx-auto sm:p-0 p-8 h-auto md:min-h-[750px] relative">
+                <div class="sm:absolute block inset-0 flex flex-col justify-center">
+                    <h1 class="sm:block hidden text-white font-semibold text-[200px] leading-[200px]" style="opacity: 1; transform: none;">Мэдээ</h1>
+                    <h1 class="sm:block hidden text-white font-semibold text-[200px] leading-[200px]" style="opacity: 1; transform: none;">Мэдээлэл</h1>
+                </div>
+                <div class="flex sm:flex-row flex-col gap-10 sm:gap-16 md:gap-20 sm:absolute relative z-10 w-full pl-0 sm:pl-20 md:pl-36 pt-2 sm:pt-40 sm:pb-20 overflow-x-auto hide-scrollbar scrollbar-hide">
+                    <div class="flex flex-col items-start gap-2 p-8 w-full sm:w-[450px] md:w-[500px] lg:w-[550px] cursor-pointer border border-[#EAECF0] bg-[#FFF] flex-shrink-0 snap-start">
+                        <div class="w-full relative shrink-0 h-[250px]">
+                            <img src="/zurag1.webp" alt="" class="w-full object-cover" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+                        </div>
+                        <div class="flex items-start gap-2 self-stretch mt-[10px] h-full">
+                            <div class="flex flex-col gap-1 lg:gap-2 justify-between w-full h-full">
+                                <div class="flex flex-col gap-1 lg:gap-2">
+                                    <h1 class="text-[16px] md:text-[18px] lg:text-[20px] text-[#1D2939] leading-[24px] font-semibold max-w-[100%] overflow-hidden text-ellipsis line-clamp-3">M Mart сүлжээ дэлгүүрийн ханган нийлүүлэгчид БАРАА ТАТАН АВАХ БАРЬЦААГҮЙ ЗЭЭЛ-ийг авах боломжтой боллоо !</h1>
+                                    <div class="text-[11px] sm:text-[12px] md:text-[14px] lg:text-[16px] text-[#475467] max-w-[100%] overflow-hidden text-ellipsis line-clamp-3 sm:line-clamp-4 leading-[15px] lg:leading-[22px]">
+                                        <p class="text-justify news-detail">Ариг банк нь 2025 оныг </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-start gap-2 p-8 w-full sm:w-[450px] md:w-[500px] lg:w-[550px] cursor-pointer border border-[#EAECF0] bg-[#FFF] flex-shrink-0 snap-start">
+                        <div class="w-full relative shrink-0 h-[250px]">
+                            <img src="/zurag1.webp" alt="" class="w-full object-cover" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+                        </div>
+                        <div class="flex items-start gap-2 self-stretch mt-[10px] h-full">
+                            <div class="flex flex-col gap-1 lg:gap-2 justify-between w-full h-full">
+                                <div class="flex flex-col gap-1 lg:gap-2">
+                                    <h1 class="text-[16px] md:text-[18px] lg:text-[20px] text-[#1D2939] leading-[24px] font-semibold max-w-[100%] overflow-hidden text-ellipsis line-clamp-3">M Mart сүлжээ дэлгүүрийн ханган нийлүүлэгчид БАРАА ТАТАН АВАХ БАРЬЦААГҮЙ ЗЭЭЛ-ийг авах боломжтой боллоо !</h1>
+                                    <div class="text-[11px] sm:text-[12px] md:text-[14px] lg:text-[16px] text-[#475467] max-w-[100%] overflow-hidden text-ellipsis line-clamp-3 sm:line-clamp-4 leading-[15px] lg:leading-[22px]">
+                                        <p class="text-justify news-detail">Ариг банк нь 2025 оныг </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-start gap-2 p-8 w-full sm:w-[450px] md:w-[500px] lg:w-[550px] cursor-pointer border border-[#EAECF0] bg-[#FFF] flex-shrink-0 snap-start">
+                        <div class="w-full relative shrink-0 h-[250px]">
+                            <img src="/zurag1.webp" alt="" class="w-full object-cover" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+                        </div>
+                        <div class="flex items-start gap-2 self-stretch mt-[10px] h-full">
+                            <div class="flex flex-col gap-1 lg:gap-2 justify-between w-full h-full">
+                                <div class="flex flex-col gap-1 lg:gap-2">
+                                    <h1 class="text-[16px] md:text-[18px] lg:text-[20px] text-[#1D2939] leading-[24px] font-semibold max-w-[100%] overflow-hidden text-ellipsis line-clamp-3">M Mart сүлжээ дэлгүүрийн ханган нийлүүлэгчид БАРАА ТАТАН АВАХ БАРЬЦААГҮЙ ЗЭЭЛ-ийг авах боломжтой боллоо !</h1>
+                                    <div class="text-[11px] sm:text-[12px] md:text-[14px] lg:text-[16px] text-[#475467] max-w-[100%] overflow-hidden text-ellipsis line-clamp-3 sm:line-clamp-4 leading-[15px] lg:leading-[22px]">
+                                        <p class="text-justify news-detail">Ариг банк нь 2025 оныг </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+      </section>
+      
+      <section data-aos="fade-up">
+        <div class="z-[99999] fixed bottom-10 right-5">
+          <!-- Main Floating Button -->
+          <div id="toggleFAB" class="w-[52px] h-[52px] bg-white rounded-full border border-gray-200 shadow-xs inline-flex p-3 items-center justify-center cursor-pointer transition-transform hover:scale-110">
+  <i class="fa-solid fa-chevron-up"></i>
+</div>
+      
+          <!-- Floating Action Buttons -->
+          <div class="absolute bottom-[70px] right-0 flex flex-col items-center gap-4 transition-all duration-300 ease-in-out opacity-100 translate-y-0">
+            <!-- Chat Button -->
+            <div class="group cursor-pointer hover:border-purple transition duration-300 ease-in-out w-[52px] h-[52px] bg-white rounded-full border border-gray-200 shadow-xs inline-flex p-3 items-center justify-center">
+              <i class="fa-solid fa-comment-dots"></i>
+            </div>
+      
+            <!-- Phone Button -->
+            <div class="group cursor-pointer hover:border-purple transition duration-300 ease-in-out w-[52px] h-[52px] bg-white rounded-full border border-gray-200 shadow-xs inline-flex p-3 items-center justify-center">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+      
+            <!-- Calculator Button -->
+            <div class="group cursor-pointer hover:border-purple transition duration-300 ease-in-out w-[52px] h-[52px] bg-white rounded-full border border-gray-200 shadow-xs inline-flex p-3 items-center justify-center">
+              <i class="fa-solid fa-calculator"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <footer class="bg-[#22034A] p-6 md:py-16 flex flex-col gap-8 md:gap-32 relative">
+        <div class="container mx-auto">
+          <div class="flex flex-col justify-between md:flex-row items-start gap-6 md:gap-8 lg:gap-20">
+            <div class="grid md:grid-cols-4 grid-cols-2 gap-6 md:gap-10 lg:gap-16 w-full">
+              <!-- Logo & Address -->
+              <div class="flex flex-col sm:items-start items-center gap-7 w-full">
+                <img src="/logo_mn.svg" alt="">
+      
+                <div class="text-white flex flex-col gap-7">
+                  <p class="cursor-pointer text-center sm:text-left">Чингисийн өргөн чөлөө, Хан-Уул дүүрэг, Улаанбаатар хот, Монгол улс.</p>
+                  <div class="flex flex-col gap-9 items-start">
+                    <div class="flex flex-col items-start gap-3">
+                      <div class="flex gap-3 justify-start items-center cursor-pointer">
+                        <i class="fa-solid fa-phone"></i>
+                        <h1 class="text-white">+ 976 70701001</h1>
+                      </div>
+                      <div class="flex gap-3 justify-start items-center cursor-pointer">
+                        <i class="fa-solid fa-envelope"></i>
+                        <h1 class="text-white">info@arigbank.mn</h1>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+              <!-- Бид -->
+              <div class="flex flex-col sm:gap-4 gap-2 items-start">
+                <h1 class="text-xl md:text-2xl font-semibold text-white mb-5">Бид</h1>
+                <div class="flex flex-col gap-3 md:gap-5 text-white text-[15px] font-normal">
+                  <a href="#" class="cursor-pointer">Бидний тухай</a>
+                  <a href="#" class="cursor-pointer whitespace-nowrap">Тогтвортой хөгжил</a>
+                  <a href="#" class="cursor-pointer whitespace-nowrap">Нууцлалын бодлого</a>
+                  <a href="#" class="cursor-pointer">Мэдээ мэдээлэл</a>
+                </div>
+              </div>
+      
+              <!-- Бусад үйлчилгээ -->
+              <div class="flex flex-col items-start sm:gap-4 gap-2">
+                <h1 class="text-xl md:text-2xl font-semibold text-white mb-5 whitespace-nowrap">Бусад үйлчилгээ</h1>
+                <div class="flex flex-col gap-3 md:gap-5 text-white text-base font-normal">
+                  <a href="#" class="cursor-pointer">Хадгаламжийн хайрцаг</a>
+                  <a href="#" class="cursor-pointer">Баталгаа, батлан даалт</a>
+                  <a href="#" class="cursor-pointer">Даатгалын зуучлал</a>
+                  <a href="#" class="cursor-pointer">Лавлагаа, Тодорхойлолт</a>
+                </div>
+              </div>
+      
+              <!-- Танд -->
+              <div class="flex flex-col items-start sm:gap-4 gap-2 md:ml-10">
+                <h1 class="text-xl md:text-2xl font-semibold text-white mb-5">Танд</h1>
+                <div class="text-white flex flex-col gap-3 md:gap-5 text-base font-normal">
+                  <a href="#" class="cursor-pointer">Хүний нөөц</a>
+                  <a href="#" class="cursor-pointer">Санал хүсэлт</a>
+                  <a href="#" class="cursor-pointer">Түгээмэл асуулт хариулт</a>
+                  <a href="#" class="cursor-pointer">Цахим брошур</a>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Footer bottom -->
+          <div class="flex flex-col md:flex-row justify-between gap-10 mt-8 md:mt-12">
+            <div class="flex gap-7 text-white text-xl">
+              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-instagram"></i>
+              <i class="fa-brands fa-youtube"></i>
+            </div>
+            <div class="flex flex-col gap-4 text-white text-sm">
+              <div class="opacity-80">© 2025 Ариг Бaнк. Бүх эрх хуулиар хамгаалагдсан.</div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      
+</body>
+</html>

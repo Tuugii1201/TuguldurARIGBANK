@@ -1,0 +1,11 @@
+<button id="servicesToggle" type="button" class="text-gray-600 hover:text-black flex items-center gap-1 focus:outline-none border rounded-full px-4 py-2 bg-white shadow-md transition duration-300 ease-in-out">
+                      <i class="fas fa-caret-left"></i> 
+                    </button>
+                    <div id="servicesMenu"
+                     class="absolute top-1/2 right-full ml-2 flex flex-row bg-white border rounded-md shadow-lg
+                            transform -translate-x-4 -translate-y-1/2 opacity-0 invisible
+                            transition-all duration-300 z-50 py-3.5">
+                      <a href="#" class="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 whitespace-nowrap border-r">Loan</a>
+                      <a href="#" class="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 whitespace-nowrap border-r">Savings</a>
+                      <a href="#" class="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 whitespace-nowrap">Insurance</a>
+                    </div>
